@@ -1,0 +1,28 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+    <h1>WeLCOmE To Django World</h1>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+      <a class="ml-2" href="{% url 'Post-Create' %}">Add Here..!!</a>
+      </small>
+  </div>
+    <div>
+      {% for post in posts %}
+        <!-- <h1>{{post.title}}</h1>
+        <p>By {{post.author}} on {{post.date_posted}}</p> 
+        <p>{{post.content}}</p> -->
+          <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <img class="rounded-circle account-img" src="{{ post.author.profile.image.url }}">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted | date:"F d,Y" }}</small>
+              </div>
+              <h2><a class="article-title" href="{% url 'Post-Details' post.id %}">{{ post.title }}</a></h2>
+              <p class="article-content">{{ post.content }}</p>
+              <img class="post-img account-img" src="{{ post.image.post.image.url }}">
+            </div>
+          </article>
+      {% endfor %}
+    </div>        
+{% endblock content %}

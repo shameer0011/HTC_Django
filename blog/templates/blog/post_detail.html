@@ -1,0 +1,30 @@
+{% extends "blog/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>Hai...{{user.username}} </h2>
+<h3>This post Created By {{post1.author}}</h3>
+<ul>
+    <li>
+        post {{post1.title }}
+    </li>
+</ul>
+<article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <img class="rounded-circle account-img" src="{{ post1.author.profile.image.url }}">
+        <a class="mr-2" href="#">{{ post1.author }}</a>
+        <small class="text-muted">{{ post1.date_posted | date:"F d,Y" }}</small>
+        {% if post1.author == user %}
+        <!-- <div class="article-metadata"> -->
+            <a class="btn btn-dark btn-sm mt-1 mb-1" href="{% url 'Post-Update' object.id %}">Update</a>
+            <a class="btn btn-dark btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+        <!-- </div> -->
+        {% endif %}
+      </div>
+      <h2><a class="article-title" >{{ post1.title }}</a></h2>
+      <p class="article-content">{{ post1.content }}</p>
+      <img class="post-img account-img" src="{{ post1.image.post.image.url }}">
+    </div>
+  </article>
+
+{% endblock content %}

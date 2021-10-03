@@ -1,0 +1,20 @@
+{% extends "blog/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>You can Add Posts..</h2>
+<div class="content-section">
+    <form method="POST"></form>
+
+        <div class="form-group">
+            
+            <button class="btn btn-outline-info" type="submit">Post Here..</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+        <a class="ml-2" href="{% url 'blog-home' %}">Back</a>
+        </small>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+    <h2>About page Here..!</h2>
+    <h3>{{title}}  </h3>
+    <h2>{{Content}}</h2>
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.author }}</a>
+            
+          </div>
+          <h2><a class="article-title" href="#">{{title }}</a></h2>
+          <p class="article-content">{{content }}</p>
+        </div>
+      </article>
+{% endblock content %}

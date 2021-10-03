@@ -1,0 +1,27 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+<form action="/log" method="POST">
+    <div>
+        <div id="div2" class="form-control form-group">
+            <div>
+                <!-- <label for="UserName">UserName</label> -->
+                <input type="text" class="form-control is-valid" name="txtuserName" id="username" placeholder="UserName" required>
+            </div>
+            <div>
+                <!-- <label for="pwd">Password</label> -->
+                <input type="password" class="form-control custom-password  is-valid" name="txtpwd" id="pwd" placeholder="**Password**" required>
+            </div>
+        </div>
+        <!-- <div class="containar2" id="result1">
+            <h2>You done!!!</h2>
+        </div> -->
+        <div id="div4" class="form-control ">
+            <input type="submit" class="form-control btn btn-dark" id="btn1" value="LoGIN" />
+        </div>
+
+    </div>
+    <a href="/">Back</a>  
+
+</form>
+
+{% endblock content %}
